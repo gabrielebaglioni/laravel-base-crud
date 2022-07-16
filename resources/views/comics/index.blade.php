@@ -16,9 +16,14 @@
             <ul class="py-2 flex-wrap"> 
                <li class="w-42"><img src="{{$comic->thumb}}" alt=""></li>
             </ul> 
-            <a class="btn btn-secondary items-center text-dark" href="{{route('comics.show', $comic->id)}}">visualizza</a> 
-            <a class="btn btn-dark items-center" href="{{route('comics.edit', $comic->id)}}">Modifica</a>   
-         </div>  
+            <a class="btn btn-secondary items-center text-dark" href="{{route('comics.show', $comic->id)}}">Visualizza</a> 
+            <a class="btn btn-dark items-center" href="{{route('comics.edit', $comic->id)}}">Modifica</a> 
+         </div> 
+         <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+            @csrf
+            @method('delete')
+            <button type="submit" class="btn btn-danger ">Cancella</button>
+         </form>   
              
          @endforeach
       </div>

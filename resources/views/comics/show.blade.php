@@ -7,6 +7,7 @@
     <img class="w-42" src="{{$comic->thumb}}" alt="">
     <h3>{{$comic->price}}$</h3>
     <p>{{$comic->description}}</p> 
-    <a href="{{route('comics.index')}}">torna alla lista</a>
+    <button class="btn btn-dark items-center"><a href="{{route('comics.index')}}">torna alla lista</a></button>
+    
     
 @endsection
